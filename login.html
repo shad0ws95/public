@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="materialize/css/materialize.css">
+    <script src="materialize/js/materialize.js"></script>
+
+</head>
+<body>
+  <div class="navbar-fixed">
+    <nav>
+        <div class="nav-wrapper">
+          <img src="img/logotelecall.png" class="brand-logo center" alt="Logo Telecall">
+          <ul id="nav-mobile" class="left hide-on-med-and-down">
+            <li><a href="index.html">Institucional</a></li>
+            <li><a href="#">Serviços</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="cadastro.html">Cadastro</a></li>
+          </ul>
+        </div>
+      </nav>
+  </div>
+      <div class="container">
+          <form action="post" class="col s12">
+              <h1 class="center-align">Entrar</h1>
+              <h2 class="flow-text center-align">Entre ou <a href="cadastro.html">Crie</a> sua conta para conhecer melhor nossos serviços.</h2>
+              <div class="row">
+                <div class="col l3 s3"></div>
+                  <div class="input-field col s6">
+                      <input id="login" type="text" class="validate" minlength="6" maxlength="6">
+                      <label for="login">Login</label>
+                      <div class="col l3 s3"></div>
+                  </div>
+              </div>
+              <div class="row">
+                <div class="col s3"></div>
+                <div class="input-field col s6">
+                  <input id="senha" type="password" class="validate" minlength="8" maxlength="8">
+                  <label for="senha">Senha</label>
+                  <div class="col s3"></div>
+                </div>
+              </div>
+              <div class="row">
+              <div class="col s5"></div>
+              <button class="btn waves-effect waves-light col s2" type="submit" name="action">Entrar
+                  <i class="material-icons right"></i>
+                </button>
+                <div class="col s5"></div>
+              </div>
+              <div class="row">
+                <div class="col s3"></div>
+                  <div class="col s6 center-align"><a href="#">Esqueci minha senha</a></div>
+                  <div class="col s3"></div>
+              </div>
+            </div>
+            <div class="row"></div>
+            <div class="row"></div>
+            <div class="row"></div>
+          </form>
+        </div>
+    <footer class="page-footer">
+      <div class="container">
+        <div class="row">
+          <h5 class="white-text">Mapa do Site</h5>
+          <div class="col l3 s12">
+            <h6 class="grey-text text-lighten-4">Institucional</h6>
+            <ul>
+                <li><a class="grey-text text-lighten-3" href="#!">Sobre a Telecall</a></li>
+                <li><a class="grey-text text-lighten-3" href="#!">Missão, Visão e Valores</a></li>
+                <li><a class="grey-text text-lighten-3" href="#!">Presença Mundial</a></li>
+                <li><a class="grey-text text-lighten-3" href="#!">Fibra Telecall</a></li>
+              </ul>
+          </div>
+          <div class="col l3 s12">
+            <h6 class="grey-text text-lighten-4">Serviços</h6>
+            <ul>
+                <li><a class="grey-text text-lighten-3" href="#!">Internet</a></li>
+                <li><a class="grey-text text-lighten-3" href="#!">Telefonia</a></li>
+                <li><a class="grey-text text-lighten-3" href="#!">Rede e Infraestrutura</a></li>
+              </ul>
+            </div>
+            <div class="col l3 s12">
+              <h6 class="grey-text text-lighten-4">Clientes</h6>
+              <ul>
+                  <li><a class="grey-text text-lighten-3" href="login.html">Login</a></li>
+                  <li><a class="grey-text text-lighten-3" href="cadastro.html">Cadastro</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Fale Conosco</a></li>
+                </ul>
+            </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+        © 2023 Felipe Guedes - Aluno de Análise e Desenvolvimento de Sistemas - UNISUAM
+        <a class="grey-text text-lighten-4 right" href="#!">Meus Links</a>
+        </div>
+      </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- Inicializar Materialize -->
+    <script>
+      M.AutoInit();
+    </script>
+</body>
+</html>
