@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="materialize/css/materialize.css">
-    <script src="materialize/js/materialize.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
@@ -23,13 +22,13 @@
       </nav>
   </div>
       <div class="container">
-          <form action="post" class="col s12">
+          <form action="logado.html" method="post" class="col s12">
               <h1 class="center-align">Entrar</h1>
               <h2 class="flow-text center-align">Entre ou <a href="cadastro.html">Crie</a> sua conta para conhecer melhor nossos serviços.</h2>
               <div class="row">
                 <div class="col l3 s3"></div>
                   <div class="input-field col s6">
-                      <input id="login" type="text" class="validate" minlength="6" maxlength="6">
+                      <input id="login" type="text" class="validate" minlength="6" maxlength="6" required>
                       <label for="login"><i class="material-icons left">person_outline</i>Login</label>
                       <div class="col l3 s3"></div>
                   </div>
@@ -37,7 +36,7 @@
               <div class="row">
                 <div class="col s3"></div>
                 <div class="input-field col s6">
-                  <input id="senha" type="password" class="validate" minlength="8" maxlength="8">
+                  <input id="senha" type="password" class="validate" minlength="8" maxlength="8" required>
                   <label for="senha"><i class="material-icons left">lock</i>Senha</label>
                   <div class="col s3"></div>
                 </div>
