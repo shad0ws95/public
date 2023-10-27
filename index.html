@@ -8,6 +8,29 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
+  <main>
+  <header>
+  <ul id="acessibilidade" class="dropdown-content black">
+    <li><a href="#!" class="white-text">Original</a></li>
+    <li><a href="#!" class="white-text">Aumento de Contraste</a></li>
+    <li><a href="#!" class="white-text">Escala de Cinza</a></li>
+    <li><a href="#!" class="white-text">Cor Invertida</a></li>
+    <li><a href="#!" class="white-text">Escala de Cinza Invertida</a></li>
+    <li><a href="#!" class="white-text">Amarelo no Preto</a></li>
+    <li class="divider"></li>
+    <li><a href="#!" class="white-text">Aumentar Fonte</a></li>
+    <li><a href="#!" class="white-text">Diminuir Fonte</a></li>
+  </ul>
+  <div class="navbar-fixed50">
+    <nav class="height50">
+        <div class="nav-wrapper black height50">
+          <ul id="nav-mobile" class="left hide-on-med-and-down height50">
+            <li><a href="#main" class="waves-effect waves-light btn conteudo black">Vá para o conteúdo</a></li>
+            <li><a class="dropdown-trigger waves-effect waves-light btn conteudo black" href="#!" data-target="acessibilidade">Acessibilidade<i class="material-icons right">arrow_drop_down</i></a></li>
+          </ul>
+        </div>
+      </nav>
+  </div>
   <div class="navbar-fixed">
     <nav>
         <div class="nav-wrapper">
@@ -21,8 +44,12 @@
         </div>
       </nav>
   </div>
+</header>
   <div class="parallax-container">
-    <div class="parallax responsive-img"><img src="img/telecomunicacao.jpg"></div>
+    <figure class="parallax responsive-img">
+      <img src="img/telecomunicacao.jpg" alt="Planeta com redes de comunicação">
+      <figcaption>Planeta terra com redes de comunicação</figcaption>
+    </figure>
   </div>
   <div class="row">
     <div class="col m3">
@@ -82,6 +109,7 @@
       </blockquote>
     </div>
   </div>
+</main>
     <footer class="page-footer">
         <div class="container">
           <div class="row">
