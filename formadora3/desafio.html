@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="py-5 text-center">
+        <img class="d-block mx-auto mb-4" src="unisuam.png" alt="" width="120" height="120">
+        <h1>UNISUAM</h1>
+        <h2>Compromisso para a vida toda</h2>
+        </div>
+    <div class="container">
+        <form id="myForm" action="https://www.unisuam.edu.br" method="post">
+            <div class="form-group">
+                <label for="nome">Nome:</label>
+                <input type="text" class="form-control" id="nome" minlength="10" onblur="validaNome()" required>
+                <p id="erroNome"></p>
+            </div>
+            <div class="form-group">
+                <label for="idade">Idade:</label>
+                <input type="number" class="form-control" id="idade" required>
+            </div>
+            <div class="form-group">
+                <label for="endereco">Endereço:</label>
+                <input type="text" class="form-control" id="endereco" required>
+            </div>
+            <div class="form-group">
+                <label for="login">Login (5 caracteres):</label>
+                <input type="text" class="form-control" id="login" maxlength="5" onblur="validaLogin()" required>
+                <p id="erroLogin"></p>
+            </div>
+            <div class="form-group">
+                <label for="senha">Senha (8 caracteres):</label>
+                <input type="password" class="form-control" id="senha" maxlength="8" onblur="validaSenha()" required>
+                <p id="erroSenha"></p>
+            </div>
+            <div class="form-group">
+                <label for="repeteSenha">Repetir Senha:</label>
+                <input type="password" class="form-control" id="repeteSenha" maxlength="8" onblur="validaRepete()" required>
+                <p id="erroRepete"></p>
+            </div>
+            <button type="button" class="btn btn-primary" onclick="enviar()" id="enviarButton" disabled>Enviar</button>
+        </form>
+    </div>
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+        <div class="col-md-12 d-flex align-items-center">
+          <span class="mb-3 mb-md-0 text-muted">© 2023 - Avaliação Formadora - Felipe Guedes - Graduando de Análise e Desenvolvimento de Sistemas</span>
+        </div>
+      </footer>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        var nomeok = false;
+        var loginok = false;
+        var senhaok = false;
+        var repeteok = false;
+
+        function validaNome() {
+            var nome = document.getElementById("nome").value;
+            var erroNome = document.getElementById("erroNome");
+            
+            if (nome.length < 10) {
+                erroNome.innerHTML = "Nome deve ter pelo menos 10 caracteres.";
+                nomeok = false;
+            } else {
+                erroNome.innerHTML = "";
+                nomeok = true;
+            }
+            atualizarBotao();
+        }
+
+        function validaLogin() {
+            var login = document.getElementById("login").value;
+            var erroLogin = document.getElementById("erroLogin");
+
+            if (login.length !== 5) {
+                erroLogin.innerHTML = "Login deve ter exatamente 5 caracteres.";
+                loginok = false;
+            } else {
+                erroLogin.innerHTML = "";
+                loginok = true;
+            }
+            atualizarBotao();
+        }
+
+        function validaSenha() {
+            var senha = document.getElementById("senha").value;
+            var erroSenha = document.getElementById("erroSenha");
+
+            if (senha.length !== 8) {
+                erroSenha.innerHTML = "Senha deve ter exatamente 8 caracteres.";
+                senhaok = false;
+            } else {
+                erroSenha.innerHTML = "";
+                senhaok = true;
+            }
+            atualizarBotao();
+        }
+
+        function validaRepete() {
+            var senha = document.getElementById("senha").value;
+            var repeteSenha = document.getElementById("repeteSenha").value;
+            var erroRepete = document.getElementById("erroRepete");
+
+            if (senha !== repeteSenha) {
+                erroRepete.innerHTML = "Os campos 'Senha' e 'Repetir Senha' devem ser iguais.";
+                repeteok = false;
+            } else {
+                erroRepete.innerHTML = "";
+                repeteok = true;
+            }
+            atualizarBotao();
+        }
+
+        function atualizarBotao() {
+            var enviarButton = document.getElementById("enviarButton");
+            if (nomeok && loginok && senhaok && repeteok) {
+                enviarButton.removeAttribute("disabled");
+            } else {
+                enviarButton.setAttribute("disabled", "disabled");
+            }
+        }
+
+        function enviar() {
+            if (nomeok && loginok && senhaok && repeteok) {
+                document.getElementById("myForm").submit();
+            } else {
+                alert("Por favor, verifique os campos do formulário.");
+            }
+        }
+    </script>
+</body>
+</html>
