@@ -6,25 +6,38 @@
     <title>Login</title>
     <link rel="stylesheet" href="materialize/css/materialize.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="shortcut icon" type="ico" href="./img/Imagem1.ico">
 </head>
 <body>
-  <div class="navbar-fixed">
-    <nav>
-        <div class="nav-wrapper">
-          <img src="img/logotelecall.png" class="brand-logo center" alt="Logo Telecall">
-          <ul id="nav-mobile" class="left hide-on-med-and-down">
-            <li><a href="index.html">Institucional</a></li>
-            <li><a href="#">Serviços</a></li>
-            <li><a href="login.html">Login</a></li>
-            <li><a href="cadastro.html">Cadastro</a></li>
-          </ul>
-        </div>
-      </nav>
-  </div>
+    <header>
+      <div class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper">
+              <img src="img/logotelecall.png" class="brand-logo center" alt="Logo Telecall">
+              <a href="#" class="sidenav-trigger hide-on-large-only" data-target="mobile-links">
+                <i class="material-icons">menu</i>
+              </a>
+              <ul id="nav-mobile" class="left hide-on-med-and-down">
+                <li><a href="index.html">Institucional</a></li>
+                <li><a href="serviços.html">Serviços</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="cadastro.html">Cadastro</a></li>
+              </ul>
+            </div>
+          </nav>
+      </div>
+      <ul class="sidenav" id="mobile-links">
+        <li><a href="index.html">Institucional</a></li>
+        <li><a href="serviços.html">Serviços</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="cadastro.html">Cadastro</a></li>
+      </ul>
+  </header>
       <div class="container">
-          <form action="logado.html" method="post" class="col s12">
+          <form class="col s12">
               <h1 class="center-align">Entrar</h1>
               <h2 class="flow-text center-align">Entre ou <a href="cadastro.html">Crie</a> sua conta para conhecer melhor nossos serviços.</h2>
+              <div id="mensagem"></div>
               <div class="row">
                 <div class="col l3 s3"></div>
                   <div class="input-field col s6">
@@ -43,7 +56,7 @@
               </div>
               <div class="row">
               <div class="col s5"></div>
-              <button class="btn waves-effect waves-light col s2" type="submit" name="action">Entrar
+              <button class="btn waves-effect waves-light col s2" onclick="entrar(); return false">Entrar
                   <i class="material-icons right">send</i>
                 </button>
                 <div class="col s5"></div>
@@ -97,6 +110,7 @@
         </div>
       </div>
     </footer>
+    <script src="./js/login.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <!-- Inicializar Materialize -->
     <script>
