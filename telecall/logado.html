@@ -3,40 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro</title>
+    <title>Meu Cadastro</title>
     <link rel="stylesheet" href="materialize/css/materialize.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="shortcut icon" type="ico" href="./img/Imagem1.ico">
 </head>
 <body>
-    <nav class="nav-extended">
-        <div class="nav-wrapper">
-          <img src="img/logotelecall.png" class="brand-logo center">
-          <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-          <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li>Bem vindo(a), Felipe!</li>
-            <li></li>
-            <li><a href="#">Contraste</a></li>
-          </ul>
+    <header>
+        <div class="navbar-fixed">
+          <nav>
+              <div class="nav-wrapper">
+                <img src="img/logotelecall.png" class="brand-logo center" alt="Logo Telecall">
+                <a href="#" class="sidenav-trigger hide-on-large-only" data-target="mobile-links">
+                  <i class="material-icons">menu</i>
+                </a>
+                <ul id="nav-mobile" class="left hide-on-med-and-down">
+                  <li><a href="index.html">Institucional</a></li>
+                  <li><a href="serviços.html">Serviços</a></li>
+                  <li><a href="login.html">Login</a></li>
+                  <li><a href="cadastro.html">Cadastro</a></li>
+                </ul>
+              </div>
+            </nav>
         </div>
-      </nav>
-      <ul class="sidenav" id="mobile-demo">
-        <li><a class="subheader" href="#">Institucional</a></li>
-        <li><a href="index.html">Sobre a Telecall</a></li>
-        <li><a href="index.html">Missão, Visão e Valores</a></li>
-        <li><a href="index.html">Presença Mundial</a></li>
-        <li><a href="index.html">Fibra Telecall</a></li>
-        <li><a class="subheader" href="#">Serviços</a></li>
-        <li><a href="#">Internet</a></li>
-        <li><a href="#">Telefonia</a></li>
-        <li><a href="#">Rede e Infraestrutura</a></li>
-        <li><a class="subheader" href="#">Fale Conosco</a></li>
-        <li><a href="index.html">Whatsapp Comercial</a></li>
-        <li><a href="index.html">Whatsapp Suporte</a></li>
-        <li><a href="index.html">Whatsapp Financeiro</a></li>
-      </ul>
+        <ul class="sidenav" id="mobile-links">
+          <li><a href="index.html">Institucional</a></li>
+          <li><a href="serviços.html">Serviços</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="cadastro.html">Cadastro</a></li>
+        </ul>
+    </header>
     <div class="container">
         <form action="#" method="post" class="col s12">
         <h1 class="center-align">Meu cadastro</h1>
+        <button class="btn waves-effect waves-light input-field col s4" onclick="logout(); return false">Sair
+        </button>
         <div class="row">
             <div class="input-field col s6">
                 <input id="nome" name="nome" type="text" class="validate" minlength="6" maxlength="40" disabled>
@@ -54,19 +55,15 @@
                 <input id="nome_mae" name="nome_mae" type="text" class="validate" minlength="6" maxlength="40" value="Dona Maria" disabled>
                 <label for="nome_mae">Nome da Mãe</label>
             </div>
-            <div class="input-field col s6">
-                <div class="input-field col s3">
-                <label>
-                    <input name="sexo" value="masculino" type="radio" checked disabled>
-                    <span>Masculino</span>
-                </label>
-                </div>
-                <div class="input-field col s3">
-                    <label>
-                    <input name="sexo" value="feminino" type="radio" disabled>
-                    <span>Feminino</span>
-                </label>
-                </div>
+            <div class="input-field col s6 form-control">
+                <select name="sexo" id="sexo" disabled>
+                    <option value="">Sexo</option>
+                    <option value="masculino" selected>Masculino</option>
+                    <option value="feminino">Feminino</option>
+                </select>
+                <i class="material-icons left ico-sucesso">check_circle</i>
+                <i class="material-icons left ico-erro">error</i>
+                <small>Mensagem de Erro</small>
             </div>
             <div class="input-field col s6">
                 <input name="cep" type="text" id="cep" maxlength="9" value="12345-678" class="validate" disabled>
@@ -161,16 +158,21 @@
           <a class="grey-text text-lighten-4 right" href="#!">Meus Links</a>
           </div>
         </div>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-        <!-- Inicializar Materialize -->
-        <script>
-          M.AutoInit();
-        </script>
       </footer>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
       <!-- Inicializar Materialize -->
       <script>
         M.AutoInit();
       </script>
+    <script>
+if(localStorage.getItem('token') == null){
+    alert("Você precisa estar logado para acessar esta página!")
+    window.location.href = 'login.html';
+}
+function logout(){
+    localStorage.removeItem('token')
+    window.location.href = 'index.html'
+}
+    </script>
 </body>
 </html>
