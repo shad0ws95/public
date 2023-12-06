@@ -25,7 +25,7 @@ function entrar(){
             localStorage.setItem('token', token)
             localStorage.setItem('userLogado', JSON.stringify(validaUsuario))
             alert("Seja bem vindo!");
-            window.location.href = 'logado.html'
+            window.location.href = 'servicos.html'
         } else(
             alert("Usuário ou senha incorretos")
         )
