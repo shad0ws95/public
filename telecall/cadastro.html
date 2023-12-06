@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="materialize/css/materialize.css">
     <script src="materialize/js/materialize.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="shortcut icon" type="ico" href="./img/Imagem1.ico">
     <script>
     
       function limpa_formulário_cep() {
@@ -77,106 +78,158 @@
   </script>
 </head>
 <body>
-    <div class="navbar-fixed">
-        <nav>
-            <div class="nav-wrapper">
-              <img src="img/logotelecall.png" class="brand-logo center" alt="Logo Telecall">
-              <ul id="nav-mobile" class="left hide-on-med-and-down">
-                <li><a href="index.html">Institucional</a></li>
-                <li><a href="#">Serviços</a></li>
-                <li><a href="login.html">Login</a></li>
-                <li><a href="cadastro.html">Cadastro</a></li>
-              </ul>
-            </div>
-          </nav>
-      </div>
+    <header>
+        <div class="navbar-fixed">
+          <nav>
+              <div class="nav-wrapper">
+                <img src="img/logotelecall.png" class="brand-logo center" alt="Logo Telecall">
+                <a href="#" class="sidenav-trigger hide-on-large-only" data-target="mobile-links">
+                  <i class="material-icons">menu</i>
+                </a>
+                <ul id="nav-mobile" class="left hide-on-med-and-down">
+                  <li><a href="index.html">Institucional</a></li>
+                  <li><a href="serviços.html">Serviços</a></li>
+                  <li><a href="login.html">Login</a></li>
+                  <li><a href="cadastro.html">Cadastro</a></li>
+                </ul>
+              </div>
+            </nav>
+        </div>
+        <ul class="sidenav" id="mobile-links">
+          <li><a href="index.html">Institucional</a></li>
+          <li><a href="serviços.html">Serviços</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="cadastro.html">Cadastro</a></li>
+        </ul>
+    </header>
     <div class="container">
-        <form action="cadastro.php" method="post" class="col s12">
+        <form class="col s12" id="form">
         <h1 class="center-align">Cadastro</h1>
-        <h2 class="flow-text center-align"> Crie sua conta ou <a href="login.html">Entre</a> para explorar nossos serviços.</h2>
+        <h2 class="flow-text center-align">Crie sua conta ou <a href="login.html">Entre</a> para explorar nossos serviços.</h2>
         <div class="row">
-            <div class="input-field col s6">
-                <input id="nome" name="nome" type="text" class="validate" minlength="6" maxlength="40" required>
-                <label for="nome">Nome Completo</label>
+            <div class="input-field col s6 form-control">
+                <input id="nome" name="nome" type="text" minlength="15" maxlength="60">
+                <i class="material-icons left ico-sucesso">check_circle</i>
+                <i class="material-icons left ico-erro">error</i>
+                <small>Mensagem de Erro</small>
+                <label for="nome">Nome Completo <span>(Obrigatório)</span></label>
             </div>
-            <div class="input-field col s6">
-                <input id="cpf" name="cpf" type="number" class="validate" maxlength="11" pattern="(\d{3}\.?\d{3}\.?\d{3}-?\d{2})|(\d{2}\.?\d{3}\.?\d{3}/?\d{4}-?\d{2})" placeholder="123.456.789-10" required>
-                <label for="cpf">CPF</label>
+            <div class="input-field col s6 form-control">
+                <input oninput="mascara(this, 'cpf')" id="cpf" name="cpf" type="text" maxlength="11" pattern="(\d{3}\.?\d{3}\.?\d{3}-?\d{2})|(\d{2}\.?\d{3}\.?\d{3}/?\d{4}-?\d{2})" placeholder="123.456.789-10" >
+                <label for="cpf">CPF <span>(Obrigatório)</span></label>
+                <i class="material-icons left ico-sucesso">check_circle</i>
+                <i class="material-icons left ico-erro">error</i>
+                <small>Mensagem de Erro</small>
             </div>
-            <div class="input-field col s6">
-                <input id="nascimento" name="nascimento" type="date" class="validate" required>
-                <label for="nascimento">Data de Nascimento</label>
+            <div class="input-field col s6 form-control">
+                <input id="nascimento" name="nascimento" type="date">
+                <label for="nascimento">Data de Nascimento <span>(Obrigatório)</span></label>
+                <i class="material-icons left ico-sucesso">check_circle</i>
+                <i class="material-icons left ico-erro">error</i>
+                <small>Mensagem de Erro</small>
             </div>
-            <div class="input-field col s6">
-                <input id="nome_mae" name="nome_mae" type="text" class="validate" minlength="6" maxlength="40" required>
-                <label for="nome_mae">Nome da Mãe</label>
+            <div class="input-field col s6 form-control">
+                <input id="nome_mae" name="nome_mae" type="text" minlength="15" maxlength="60" >
+                <label for="nome_mae">Nome da Mãe <span>(Obrigatório)</span></label>
+                <i class="material-icons left ico-sucesso">check_circle</i>
+                <i class="material-icons left ico-erro">error</i>
+                <small>Mensagem de Erro</small>
             </div>
-            <div class="input-field col s6">
-                <div class="input-field col s3">
-                <label>
-                    <input name="sexo" value="masculino" type="radio" checked>
-                    <span>Masculino</span>
-                </label>
-                </div>
-                <div class="input-field col s3">
-                    <label>
-                    <input name="sexo" value="feminino" type="radio" checked>
-                    <span>Feminino</span>
-                </label>
-                </div>
+            <div class="input-field col s6 form-control">
+                <select name="sexo" id="sexo">
+                    <option value="" selected disabled>Sexo</option>
+                    <option value="masculino">Masculino</option>
+                    <option value="feminino">Feminino</option>
+                </select>
+                <i class="material-icons left ico-sucesso">check_circle</i>
+                <i class="material-icons left ico-erro">error</i>
+                <small>Mensagem de Erro</small>
             </div>
-            <div class="input-field col s6">
-                <input name="cep" type="text" id="cep" value="" maxlength="9" placeholder="12345-678" class="validate" required onblur="pesquisacep(this.value);">
-                <label for="cep">CEP</label>
+            <div class="input-field col s6 form-control">
+                <input oninput="mascara(this, 'cep')" name="cep" type="text" id="cep" value="" maxlength="9" placeholder="12345-678"  onblur="pesquisacep(this.value);">
+                <label for="cep">CEP <span>(Obrigatório)</span></label>
+                <i class="material-icons left ico-sucesso">check_circle</i>
+                <i class="material-icons left ico-erro">error</i>
+                <small>Mensagem de Erro</small>
             </div>
-            <div class="input-field col s6">
-                <input id="fixo" type="tel" placeholder="12 3456-7891" pattern="[0-9]{2}[0-9]{4}[0-9]{4}" maxlength="10" class="validate" required>
+            <div class="input-field col s6 form-control">
+                <input oninput="mascara(this, 'tel')" id="fixo" type="text" placeholder="(DDD) 3456-7891" >
                 <label for="fixo">Telefone Fixo</label>
+                <i class="material-icons left ico-sucesso">check_circle</i>
+                <i class="material-icons left ico-erro">error</i>
+                <small>Mensagem de Erro</small>
             </div>
-            <div class="input-field col s6">
-                <input name="uf" id="uf" type="text" placeholder="" class="validate" required>
-                <label for="uf">Estado</label>
+            <div class="input-field col s6 form-control">
+                <input name="uf" id="uf" type="text" placeholder="" maxlength="2">
+                <label for="uf">Estado <span>(Obrigatório)</span></label>
+                <i class="material-icons left ico-sucesso">check_circle</i>
+                <i class="material-icons left ico-erro">error</i>
+                <small>Mensagem de Erro</small>
             </div>
-            <div class="input-field col s6">
-                <input id="celular" type="tel" class="validate" name="celular" placeholder="12 34567-8910" pattern="[0-9]{2}[0-9]{5}[0-9]{4}" maxlength="11" required>
-                <label for="celular">Celular</label>
+            <div class="input-field col s6 form-control">
+                <input oninput="mascara(this, 'cel')" id="celular" type="text" name="celular" placeholder="(DDD) 34567-8910" >
+                <label for="celular">Celular <span>(Obrigatório)</span></label>
+                <i class="material-icons left ico-sucesso">check_circle</i>
+                <i class="material-icons left ico-erro">error</i>
+                <small>Mensagem de Erro</small>
             </div>
-            <div class="input-field col s6">
-                <input name="cidade" id="cidade" type="text" class="validate" placeholder="" required>
-                <label for="cidade">Cidade</label>
+            <div class="input-field col s6 form-control">
+                <input name="cidade" id="cidade" type="text" placeholder="" >
+                <label for="cidade">Cidade <span>(Obrigatório)</span></label>
+                <i class="material-icons left ico-sucesso">check_circle</i>
+                <i class="material-icons left ico-erro">error</i>
+                <small>Mensagem de Erro</small>
             </div>
-            <div class="input-field col s6">
-                <input id="login" name="login" type="text" class="validate" minlength="8" maxlength="8" required>
-                <label for="login">Login</label>
+            <div class="input-field col s6 form-control">
+                <input id="login" name="login" type="text" minlength="6" maxlength="6">
+                <label for="login">Login <span>(Obrigatório)</span></label>
+                <i class="material-icons left ico-sucesso">check_circle</i>
+                <i class="material-icons left ico-erro">error</i>
+                <small>Mensagem de Erro</small>
             </div>
-            <div class="input-field col s6">
-                <input name="bairro" id="bairro" type="text" placeholder="" class="validate" data-length="10" required>
-                <label for="bairro">Bairro</label>
+            <div class="input-field col s6 form-control">
+                <input name="bairro" id="bairro" type="text" placeholder="" data-length="10" >
+                <label for="bairro">Bairro <span>(Obrigatório)</span></label>
+                <i class="material-icons left ico-sucesso">check_circle</i>
+                <i class="material-icons left ico-erro">error</i>
+                <small>Mensagem de Erro</small>
             </div>
-            <div class="input-field col s6">
-                <input name="senha" id="senha" type="password" class="validate" maxlength="8" required>
-                <label for="senha">Senha</label>
+            <div class="input-field col s6 form-control">
+                <input name="senha" id="senha" type="password" minlength="8" maxlength="8" >
+                <label for="senha">Senha <span>(Obrigatório)</span></label>
+                <i class="material-icons left ico-sucesso">check_circle</i>
+                <i class="material-icons left ico-erro">error</i>
+                <small>Mensagem de Erro</small>
             </div>
-            <div class="input-field col s6">
-                <input name="rua" id="rua" type="text" placeholder="" class="validate" required>
-                <label for="rua">Rua</label>
+            <div class="input-field col s6 form-control">
+                <input name="rua" id="rua" type="text" placeholder="" >
+                <label for="rua">Rua <span>(Obrigatório)</span></label>
+                <i class="material-icons left ico-sucesso">check_circle</i>
+                <i class="material-icons left ico-erro">error</i>
+                <small>Mensagem de Erro</small>
             </div>
-            <div class="input-field col s6">
-                <input name="conf_senha" id="conf_senha" type="password" class="validate" maxlength="8" required>
-                <label for="conf_senha">Confirmar Senha</label>
+            <div class="input-field col s6 form-control">
+                <input name="conf_senha" id="conf_senha" type="password" maxlength="8" >
+                <label for="conf_senha">Confirmar Senha <span>(Obrigatório)</span></label>
+                <i class="material-icons left ico-sucesso">check_circle</i>
+                <i class="material-icons left ico-erro">error</i>
+                <small>Mensagem de Erro</small>
             </div>
-            <div class="input-field col s6">
-                <input name="numero" id="numero" type="number" class="validate" placeholder="012345" required>
-                <label for="numero">Número</label>
+            <div class="input-field col s6 form-control">
+                <input name="numero" id="numero" type="text" placeholder="12 / 12A" >
+                <label for="numero">Número <span>(Obrigatório)</span></label>
+                <i class="material-icons left ico-sucesso">check_circle</i>
+                <i class="material-icons left ico-erro">error</i>
+                <small>Mensagem de Erro</small>
             </div>
             <div class="input-field col s6"></div>           
             <div class="input-field col s6">
-            <input id="complemento" type="text" nome="complemento" class="validate">
-            <label for="complemento">Complemento</label></div>
+            <input id="complemento" type="text" nome="complemento" >
+            <label for="complemento">Complemento <span>(Obrigatório)</span></label></div>
             <div class="row">    
                 <div class="col s3"></div>
                     <label class="col s6">
-                    <input type="checkbox" required>
+                    <input type="checkbox" >
                     <span>Aqui você aceita os <a href="#">Termos de Uso</a></span>
                     <div class="col s3"></div> 
                     </label>
@@ -184,7 +237,7 @@
             </div>
             <div class="row">
                 <div class="col s4"></div>
-                <button class="btn waves-effect waves-light input-field col s4" type="submit" name="action">Cadastrar
+                <button class="btn waves-effect waves-light input-field col s4" type="submit" onclick="cadastra()">Cadastrar
                     <i class="material-icons right"></i>
                 </button>
                 <div class="col s4"></div>
@@ -230,6 +283,8 @@
           </div>
         </div>
       </footer>
+      <script src="js/validaCadastro.js"></script>
+      <script src="js/mascara.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
       <!-- Inicializar Materialize -->
       <script>
