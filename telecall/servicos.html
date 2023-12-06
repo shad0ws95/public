@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telecall</title>
+    <link rel="stylesheet" href="materialize/css/materialize.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+  <main>
+    <header>
+        <div class="navbar-fixed">
+          <nav>
+              <div class="nav-wrapper">
+                <img src="img/logotelecall.png" class="brand-logo center" alt="Logo Telecall">
+                <a href="#" class="sidenav-trigger hide-on-large-only" data-target="mobile-links">
+                  <i class="material-icons">menu</i>
+                </a>
+                <ul id="nav-mobile" class="left hide-on-med-and-down">
+                  <li><a href="index.html">Institucional</a></li>
+                  <li><a href="serviços.html">Serviços</a></li>
+                  <li><a href="login.html">Login</a></li>
+                  <li><a href="cadastro.html">Cadastro</a></li>
+                </ul>
+                <ul id="user" class="right hide-on-med-and-down">
+                    <li>Bem vindo(a), <div id="meuUser"></div>!</li>
+                    <li><button class="btn waves-effect waves-light input-field col s4" onclick="logout(); return false">Sair
+                    </button></li>
+              </div>
+            </nav>
+        </div>
+        <ul class="sidenav" id="mobile-links">
+          <li><a href="index.html">Institucional</a></li>
+          <li><a href="serviços.html">Serviços</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="cadastro.html">Cadastro</a></li>
+        </ul>
+    </header>
+  <div class="parallax-container">
+    <figure class="parallax responsive-img">
+      <img src="img/servicos.jpeg" alt="Planeta com redes de comunicação">
+    </figure>
+  </div>
+  <div class="row">
+    <div class="col m3">
+      <ul class="table-of-contents hide-on-small-only fixed">
+        <ul>
+            <li>Internet</li>
+            <li><a href="#dedicada">Internet Dedicada</a></li>
+            <li><a href="#banda">Banda Larga</a></li>
+            <li><a href="#wifi">Wi-Fi</a></li>
+        </ul>
+        <ul>
+            <li>Telefonia</li>
+            <li><a href="#pabx">PABX IP Virtual</a></li>
+            <li><a href="#e1">E1 / SIP Trunk</a></li>
+            <li><a href="#numeros">Números 0800 e 40XX</a></li>
+        </ul>
+        <ul>
+            <li>Rede e Infraestrutura</li>
+            <li><a href="#pap">Ponto a Ponto</a></li>
+            <li><a href="#mpls">MPLS</a></li>
+            <li><a href="#fibra">Fibra Apagada e Dutos</a></li>
+            <li><a href="#locacao">Co-location</a></li>
+        </ul>
+        
+      </ul>
+    </div>
+    <div class="col m8 flow-text">
+        <h1 class="center-align">Nossos Serviços</h1>
+        <h2>Internet</h2>
+        <blockquote id="dedicada" class="scrollspy flow-text">
+            <img class="responsive-img" width="" src="img/dedicada.png" alt="">
+            <h3>Internet Dedicada</h3>
+            <p>Internet dedicada de máxima qualidade, disponibilidade e segurança.</p>
+      </blockquote>
+      <blockquote id="banda" class="scrollspy flow-text">
+            <img class="responsive-img" width="" src="img/banda.png" alt="">
+            <h3>Banda Larga</h3>
+            <p>Internet em fibra ótica de alta qualidade e velocidade.</p>
+      </blockquote>
+      <blockquote id="wifi" class="scrollspy flow-text">
+            <img class="responsive-img" width="" src="img/wifi.png" alt="">
+            <h3>Wi-fi</h3>
+            <p>Internet sem fio de alta qualidade e velocidade.</p>
+      </blockquote>
+        <h2>Telefonia</h2>
+      <blockquote id="pabx" class="scrollspy flow-text">
+            <img class="responsive-img" width="" src="img/pabx.png" alt="">
+            <h3>PABX IP Virtual</h3>
+            <p>Telefonia na nuvem de alta qualidade.</p>
+      </blockquote>
+      <blockquote id="e1" class="scrollspy flow-text">
+        <img class="responsive-img" width="" src="img/e1.png" alt="">
+          <h3>E1 / SIP Trunk</h3>
+          <p>Soluções de telefonia inteligentes.</p>
+      </blockquote>
+      <blockquote id="numeros" class="scrollspy flow-text">
+        <img class="responsive-img" width="" src="img/numeros.png" alt="">
+          <h3>Números 0800 e 40XX</h3>
+          <p>Numeros especiais de acordo com a necessidade de sua empresa.</p>
+      </blockquote>
+      <h2>Rede e Infraestrutura</h2>
+      <blockquote id="pap" class="scrollspy flow-text">
+        <img class="responsive-img" width="" src="img/pap.png" alt="">
+          <h3>Ponto a Ponto</h3>
+          <p>Acesso dedicado para ligação entre dois pontos.</p>
+      </blockquote>
+      <blockquote id="mpls" class="scrollspy flow-text">
+        <img class="responsive-img" width="" src="img/mpls.png" alt="">
+          <h3>MPLS</h3>
+          <p>Formação de rede com protocolo MPLS.</p>
+      </blockquote>
+      <blockquote id="fibra" class="scrollspy flow-text">
+        <img class="responsive-img" width="" src="img/fibra.png" alt="">
+          <h3>Fibra apagada e Dutos</h3>
+          <p>Locação privada de fibra apagada e dutos.</p>
+      </blockquote>
+      <blockquote id="locacao" class="scrollspy flow-text">
+        <img class="responsive-img" width="" src="img/locacao.png" alt="">
+          <h3>Co-Location</h3>
+          <p>Locação de espaço em rack no Data Center da Telecall.</p>
+      </blockquote>
+    </div>
+  </div>
+</main>
+    <footer class="page-footer">
+        <div class="container">
+          <div class="row">
+            <h5 class="white-text">Mapa do Site</h5>
+            <div class="col l3 s12">
+              <h6 class="grey-text text-lighten-4">Institucional</h6>
+              <ul>
+                  <li><a class="grey-text text-lighten-3" href="#!">Sobre a Telecall</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Missão, Visão e Valores</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Presença Mundial</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Fibra Telecall</a></li>
+                </ul>
+            </div>
+            <div class="col l3 s12">
+              <h6 class="grey-text text-lighten-4">Serviços</h6>
+              <ul>
+                  <li><a class="grey-text text-lighten-3" href="#!">Internet</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Telefonia</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Rede e Infraestrutura</a></li>
+                </ul>
+              </div>
+              <div class="col l3 s12">
+                <h6 class="grey-text text-lighten-4">Clientes</h6>
+                <ul>
+                    <li><a class="grey-text text-lighten-3" href="login.html">Login</a></li>
+                    <li><a class="grey-text text-lighten-3" href="cadastro.html">Cadastro</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Fale Conosco</a></li>
+                  </ul>
+              </div>
+          </div>
+        </div>
+        <div class="footer-copyright">
+          <div class="container">
+          © 2023 Felipe Guedes - Aluno de Análise e Desenvolvimento de Sistemas - UNISUAM
+          <a class="grey-text text-lighten-4 right" href="#!">Meus Links</a>
+          </div>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js">
+      $(document).ready(function(){
+        $('.scrollspy').scrollSpy({
+          scrollOffset: 0
+        });
+      });
+    </script>
+    <!-- Inicializar Materialize -->
+    <script>
+      M.AutoInit();
+    </script>
+    <script>
+    if(localStorage.getItem('token') == null){
+        alert("Você precisa estar logado para acessar esta página!")
+        window.location.href = 'login.html';
+    }
+    function logout(){
+        localStorage.removeItem('token')
+        window.location.href = 'index.html'
+    }
+        </script>
+</body>
+</html>
