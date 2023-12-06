@@ -6,44 +6,33 @@
     <title>Telecall</title>
     <link rel="stylesheet" href="materialize/css/materialize.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="shortcut icon" type="ico" href="./img/Imagem1.ico">
 </head>
 <body>
   <main>
   <header>
-  <ul id="acessibilidade" class="dropdown-content black">
-    <li><a href="#!" class="white-text">Original</a></li>
-    <li><a href="#!" class="white-text">Aumento de Contraste</a></li>
-    <li><a href="#!" class="white-text">Escala de Cinza</a></li>
-    <li><a href="#!" class="white-text">Cor Invertida</a></li>
-    <li><a href="#!" class="white-text">Escala de Cinza Invertida</a></li>
-    <li><a href="#!" class="white-text">Amarelo no Preto</a></li>
-    <li class="divider"></li>
-    <li><a href="#!" class="white-text">Aumentar Fonte</a></li>
-    <li><a href="#!" class="white-text">Diminuir Fonte</a></li>
-  </ul>
-  <div class="navbar-fixed50">
-    <nav class="height50">
-        <div class="nav-wrapper black height50">
-          <ul id="nav-mobile" class="left hide-on-med-and-down height50">
-            <li><a href="#main" class="waves-effect waves-light btn conteudo black">Vá para o conteúdo</a></li>
-            <li><a class="dropdown-trigger waves-effect waves-light btn conteudo black" href="#!" data-target="acessibilidade">Acessibilidade<i class="material-icons right">arrow_drop_down</i></a></li>
-          </ul>
-        </div>
-      </nav>
-  </div>
-  <div class="navbar-fixed">
-    <nav>
-        <div class="nav-wrapper">
-          <img src="img/logotelecall.png" class="brand-logo center" alt="Logo Telecall">
-          <ul id="nav-mobile" class="left hide-on-med-and-down">
-            <li><a href="index.html">Institucional</a></li>
-            <li><a href="#">Serviços</a></li>
-            <li><a href="login.html">Login</a></li>
-            <li><a href="cadastro.html">Cadastro</a></li>
-          </ul>
-        </div>
-      </nav>
-  </div>
+    <div class="navbar-fixed">
+      <nav>
+          <div class="nav-wrapper">
+            <img src="img/logotelecall.png" class="brand-logo center" alt="Logo Telecall">
+            <a href="#" class="sidenav-trigger hide-on-large-only" data-target="mobile-links">
+              <i class="material-icons">menu</i>
+            </a>
+            <ul id="nav-mobile" class="left hide-on-med-and-down">
+              <li><a href="index.html">Institucional</a></li>
+              <li><a href="serviços.html">Serviços</a></li>
+              <li><a href="login.html">Login</a></li>
+              <li><a href="cadastro.html">Cadastro</a></li>
+            </ul>
+          </div>
+        </nav>
+    </div>
+    <ul class="sidenav" id="mobile-links">
+      <li><a href="index.html">Institucional</a></li>
+      <li><a href="serviços.html">Serviços</a></li>
+      <li><a href="login.html">Login</a></li>
+      <li><a href="cadastro.html">Cadastro</a></li>
+    </ul>
 </header>
   <div class="parallax-container">
     <figure class="parallax responsive-img">
@@ -53,7 +42,7 @@
   </div>
   <div class="row">
     <div class="col m3">
-      <ul class="table-of-contents hide-on-small-only fixed">
+      <ul class="table-of-contents hide-on-med-and-down fixed">
         <li><a href="#sobre">Sobre a Telecall</a></li>
         <li><a href="#missao">Missão</a></li>
         <li><a href="#visao">Visão</a></li>
@@ -148,6 +137,7 @@
           </div>
         </div>
     </footer>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js">
       $(document).ready(function(){
         $('.scrollspy').scrollSpy({
