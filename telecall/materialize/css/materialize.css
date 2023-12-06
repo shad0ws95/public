@@ -9106,3 +9106,31 @@ input[type=range]::-ms-thumb {
     margin-top: 1.2rem;
   }
 }
+.form-control.sucesso input{
+  border-bottom: 1px solid green;
+}
+.form-control.erro input{
+  border-bottom: 1px solid red;
+}
+.form-control.sucesso i.ico-sucesso{
+  visibility: visible;
+  color: green;
+}
+.form-control.erro i.ico-erro{
+  visibility: visible;
+  color: red;
+}
+.form-control i{
+  position:absolute;
+  left: 10px;
+  visibility: hidden;
+}
+.form-control small{
+  visibility: hidden;
+  padding-left: 30px;
+}
+.form-control.erro small{
+  visibility: visible;
+  font-weight: bold;
+  font-size: 14px;
+}
