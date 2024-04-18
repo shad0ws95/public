@@ -26,8 +26,8 @@
         <input type="text" id="name" name="name" class="campo" required>
         <label for="email">E-mail</label>
         <input type="email" id="email" name="email" class="campo" required>
-        <label for="wpp">Whatsapp</label>
-        <input type="text" id="wpp" name="wpp" class="campo" required>
+        <label for="telefone">Whatsapp</label>
+        <input type="text" id="telefone" name="telefone" class="campo" placeholder="(21) 91234-1234" required>
         <input type="hidden" name="_captcha" value="false">
         <input type="hidden" name="_template" value="table">
         <input type="hidden" name="_next"
@@ -45,6 +45,30 @@
       <a href="https://github.com/shad0ws95">https://github.com/shad0ws95</a>
     </footer>
   </div>
+  <script>
+    function mascara(o,f){
+    v_obj=o
+    v_fun=f
+    setTimeout("execmascara()",1)
+}
+function execmascara(){
+    v_obj.value=v_fun(v_obj.value)
+}
+function mtel(v){
+    v=v.replace(/\D/g,""); //Remove tudo o que não é dígito
+    v=v.replace(/^(\d{2})(\d)/g,"($1) $2"); //Coloca parênteses em volta dos dois primeiros dígitos
+    v=v.replace(/(\d)(\d{4})$/,"$1-$2"); //Coloca hífen entre o quarto e o quinto dígitos
+    return v;
+}
+function id( el ){
+	return document.getElementById( el );
+}
+window.onload = function(){
+	id('telefone').onkeyup = function(){
+		mascara( this, mtel );
+	}
+}
+  </script>
 </body>
 
 </html>
