@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Confirme sua presença</title>
+  <link href="./styles/confirmation.css" rel="stylesheet" type="text/css" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Lavishly+Yours&family=Suranna&family=Truculenta&family=Raleway:opsz,wght@12..72,100..900&display=swap');
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <header class="header">
+      <nav class="navigation">
+        <a href="index.html" class="link">Inicio</a>
+        <a href="confirmation.html" class="link">Confirme sua presença</a>
+      </nav>
+    </header>
+    <main class="main">
+      <form class="confirmation" action="https://formsubmit.co/7c53a677b3ff8ac2c881eb2c6770b312" method="POST">
+        <label for="name">Nome</label>
+        <input type="text" id="name" name="name" class="campo" required>
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email" class="campo" required>
+        <label for="wpp">Whatsapp</label>
+        <input type="text" id="wpp" name="wpp" class="campo" required>
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_next"
+          value="https://8e9a06ec-1c51-4e3d-98e3-152a37fe7078-00-2qhs695dsqi7m.janeway.replit.dev/thanks.html">
+        <button type="submit">Enviar</button>
+      </form>
+    </main>
+    <div class="assets">
+      <img src="assets/blue_sunshade.png" class="sunshade">
+      <img src="assets/chair.png" class="chair">
+      <img src="assets/purple_floater.png" class="floater">
+      <img src="assets/green_floater.png" class="floater2">
+    </div>
+    <footer class="footer">Desenvolvido por Felipe Guedes, mais em:
+      <a href="https://github.com/shad0ws95">https://github.com/shad0ws95</a>
+    </footer>
+  </div>
+</body>
+
+</html>
