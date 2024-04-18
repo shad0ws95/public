@@ -1,0 +1,140 @@
+:root {
+  --primary-color: #FFFFFF;
+  --secondary-color: #68ddbd;
+  --background-color: #97c1d0;
+  --font-color: #316c81;
+  --title-font: 'Lavishly Yours', cursive;
+  --subtitle-font: 'Suranna', serif;
+  --content-font: 'Truculenta', sans-serif;
+  --footer-font: 'Raleway', sans-serif;
+}
+
+body {
+  font-family: var(--content-font);
+  font-optical-sizing: auto;
+  font-style: normal;
+  padding: 0 0 0 0;
+  font-variation-settings:
+    "wdth" 100;
+  background-color: var(--secondary-color);
+  --nr: 4;
+  /* number of rows */
+  --nc: 6;
+  /* number of columns */
+  --b: 3px;
+  /* border length */
+  margin: 10px auto;
+  background:
+    conic-gradient(from 90deg at var(--b) var(--b),
+      var(--secondary-color) 90deg, #0000 0) calc(-1*var(--b)) calc(-1*var(--b))/ calc(100%/var(--nc)) calc(100%/var(--nr));
+}
+
+.container {
+  justify-self: center;
+  align-self: center;
+  height: auto;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 0.3fr 2.4fr 1fr 0.3fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "header header header"
+    "main main main"
+    "assets assets assets"
+    "footer footer footer";
+}
+
+.header {
+  justify-self: start;
+  align-self: center;
+  grid-area: header;
+  padding: 2% 0% 0% 5%;
+  height: 4.3rem;
+
+  & .navigation {
+    display: flex;
+    gap: 5rem;
+
+    & .link {
+      text-decoration: none;
+      background-color: --var(--primary-color);
+      color: var(--font-color);
+      font-size: 1.5rem;
+      font-weight: 600;
+
+    }
+  }
+}
+
+.main {
+  grid-area: main;
+  justify-self: center;
+  align-self: center;
+  height: auto;
+  width: auto;
+  padding: 5% 20% 5% 20%;
+  font-size: 1.5rem;
+  background-color: var(--background-color);
+  color: var(--font-color);
+  gap: 10px;
+  border: 25px solid var(--primary-color);
+  border-color: var(--primary-color);
+
+}
+
+button {
+  color: var(--font-color);
+  background-color: var(--secondary-color);
+  border-radius: 5px;
+  width: 35%;
+  height: 30px;
+}
+
+.campo {
+  width: 100%;
+  height: 30px;
+}
+
+.assets {
+  justify-self: center;
+  align-self: center;
+  grid-area: assets;
+}
+
+.chair {
+  width: 80px;
+  position: absolute;
+  left: 65%;
+}
+
+.floater {
+  width: 20px;
+  position: absolute;
+  left: 65%;
+}
+
+.floater2 {
+  width: 20px;
+  position: absolute;
+  left: 30%;
+}
+
+.sunshade {
+  width: 65px;
+  position: absolute;
+  left: 30%;
+}
+
+.footer {
+  grid-area: footer;
+  position: absolute;
+  top: 100%;
+  height: 35px;
+  justify-self: start;
+  align-self: center;
+  width: 100%;
+  background-color: var(--secondary-color);
+  font-family: var(--footer-font);
+  color: var(--font-color);
+  font-weight: 450;
+}
